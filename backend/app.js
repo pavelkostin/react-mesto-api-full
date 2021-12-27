@@ -30,7 +30,7 @@ app.use(cors(allowedCors));
 app.use(requestLogger);
 app.use('/signup', celebrate({
   body: Joi.object().keys({
-    name: Joi.string().required().min(2).max(30),
+    name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
     avatar: Joi.string().pattern(regExp),
     email: Joi.string().email().required(),
