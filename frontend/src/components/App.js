@@ -52,7 +52,7 @@ function App() {
           if (res) {
             console.log(res.email)
             console.log(res.data.email)
-            console.log(email)
+            
             setLogin(res.data.email)
             handleLogin()
             history.push('/')
