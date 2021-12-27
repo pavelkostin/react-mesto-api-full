@@ -1,8 +1,12 @@
-const allowedCors = [
+
+const allowedCors = {
+  origin: [
     'http://shatura-mesto.students.nomoredomains.rocks',
-    'localhost:3000',
+    'http://localhost:3000',
     'https://web.postman.co'
-];
+  ],
+  credentials: true,
+};
 
 module.exports = {
     allowedCors
