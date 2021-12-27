@@ -51,9 +51,9 @@ function App() {
         .then(res => {
           if (res) {
             console.log(res.email)
-            console.log(res.data.email)
+/*             console.log(res.data.email) */
             
-            setLogin(res.data.email)
+            setLogin(res.email)
             handleLogin()
             history.push('/')
           }
