@@ -140,7 +140,7 @@ function App() {
           auth.getContent(jwt)
             .then(res => {
               if (res) {
-                setLogin(res.data.email)
+                setLogin(res.email)
                 handleLogin()
                 history.push('/')
               }
