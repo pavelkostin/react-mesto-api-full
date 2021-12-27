@@ -14,16 +14,14 @@ class Api {
 
     getCardsFromServer() {
         return fetch(`${this._url}/cards`, {
-            method: "GET",
-            headers: this._headers,
+            credentials: 'include',
         }).then(this._checkResponse);
     }
 
 
     getUSerInfoFromServer() {
         return fetch(`${this._url}/users/me`, {
-            method: "GET",
-            headers: this._headers,
+            credentials: 'include',
         }).then(this._checkResponse);
     }
 
@@ -35,7 +33,7 @@ class Api {
             body: JSON.stringify({
                 name: user.name,
                 about: user.about
-                
+
             }),
         }).then(this._checkResponse);
     }
@@ -49,7 +47,7 @@ class Api {
 
                 name: data.name,
                 link: data.link
-                
+
             }),
         }).then(this._checkResponse);
     }
@@ -79,11 +77,11 @@ class Api {
             method: (isLiked ? "PUT" : "DELETE"),
             headers: this._headers
         })
-        .then(this._checkResponse)
+            .then(this._checkResponse)
     }
 
 
-    editAvatar({avatar}) {
+    editAvatar({ avatar }) {
         return fetch(`${this._url}/users/me/avatar`, {
             method: "PATCH",
             headers: this._headers,
@@ -98,9 +96,9 @@ class Api {
 export const newApi = new Api({
     url: "http://api.shatura.students.nomoredomains.rocks",
     credentials: 'include',
-/*     headers: {
-        authorization: "1ee4b4ce-cc80-4da8-ae23-ade464e5dd65",
-        "Content-Type": "application/json",
-    }, */
+    /*     headers: {
+            authorization: "1ee4b4ce-cc80-4da8-ae23-ade464e5dd65",
+            "Content-Type": "application/json",
+        }, */
 });
 
