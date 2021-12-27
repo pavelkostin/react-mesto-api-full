@@ -42,7 +42,7 @@ function App() {
 
       })
       .catch((err) => console.log(err))
-  }, [])
+  }, [loggedIn]) //поставим loggedin
 
   useEffect(() => {
     const jwt = localStorage.getItem('token')
@@ -50,9 +50,6 @@ function App() {
       auth.getContent(jwt)
         .then(res => {
           if (res) {
-            console.log(res.email)
-/*             console.log(res.data.email) */
-            
             setLogin(res.email)
             handleLogin()
             history.push('/')
@@ -95,33 +92,6 @@ function App() {
       })
   }
 
-
-/*   function authorization(password, email) {
-    auth.login(password, email)
-      .then((data) => {
-        if (data.token) {
-          localStorage.setItem('token', data.token);
-        }
-      })
-      .then(() => {
-        handleLogin()
-        history.push('/')
-      })
-      .then(() => {
-        const jwt = localStorage.getItem('token')
-        if (jwt) {
-          auth.getContent(jwt)
-            .then(res => {
-              if (res) {
-                setLogin(res.data.email)
-                handleLogin()
-                history.push('/')
-              }
-            })
-            .catch((err) => console.log(err))
-        }
-      })
-  } */
 
   function authorization(password, email) {
     auth.login(password, email)
