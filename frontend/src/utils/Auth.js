@@ -26,11 +26,13 @@ export const register = (password, email) => {
 export const login = (password, email) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            password, email
+            "password": password,
+            "email": email
         })
     })
         .then(checkResponse)
