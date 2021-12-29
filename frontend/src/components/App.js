@@ -39,10 +39,9 @@ function App() {
       .then(([user, cards]) => {
         setCurrentUser(user)
         setCards(cards)
-
       })
       .catch((err) => console.log(err))
-  }, [loggedIn]) //поставим loggedin
+  }, []) //поставим loggedin
 
   useEffect(() => {
     const jwt = localStorage.getItem('token')
@@ -119,36 +118,6 @@ function App() {
         }
       })
   }
-
-/*   function authorization(email, password) {
-    auth.login(email, password)
-      .then((data) => {
-        if (data.token) {
-          localStorage.setItem('token', data.token);
-        }
-        console.log(data.token);
-      })
-      .then(() => {
-        handleLogin()
-        history.push('/')
-        
-      })
-      .then(() => {
-        const jwt = localStorage.getItem('token')
-        if (jwt) {
-          auth.getContent(jwt)
-            .then(res => {
-              if (res) {
-                setLogin(res.email)
-                handleLogin()
-                history.push('/')
-              }
-            })
-            .catch((err) => console.log(err))
-        }
-      })
-  } */
-
 
   function signOut() {
     localStorage.removeItem('token')
@@ -233,10 +202,10 @@ function App() {
         <Switch>
 
 
-          <Route path='/signup'>
+          <Route path='/sign-up'>
             <Register loggedIn={loggedIn} registration={registration} />
           </Route>
-          <Route path='/signin'>
+          <Route path='/sign-in'>
             <Login handleLogin={handleLogin} authorization={authorization} />
           </Route>
 
@@ -259,7 +228,7 @@ function App() {
             {loggedIn ? (
               <Redirect to="/" />
             ) : (
-              <Redirect to="/signup" />
+              <Redirect to="/sign-up" />
             )}
           </Route>
 
