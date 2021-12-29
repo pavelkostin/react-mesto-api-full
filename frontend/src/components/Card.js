@@ -7,13 +7,20 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     const currentUser = useContext(CurrentUserContext);
 
     // deletion btn class
-    const isOwn = card.owner._id === currentUser._id;
+    /* const isOwn = card.owner._id === currentUser._id; */
+
+    const isOwn = card.owner === currentUser._id; //
+
+
     const delBtnClass = (
         ` ${isOwn ? 'cards__delete' : 'cards__delete_hidden'}`
     );
 
     // like btn class
-    const isLiked = card.likes.some(like=>like._id === currentUser._id)
+    /* const isLiked = card.likes.some(like=>like._id === currentUser._id) */
+
+    const isLiked = card.likes.some(like=>like === currentUser._id)
+
     const likeBtnClass = (
         `cards__like ${isLiked ? 'cards__like_active' : ''}`
     )
