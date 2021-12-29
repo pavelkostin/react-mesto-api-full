@@ -15,6 +15,7 @@ export const register = (password, email) => {
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: 'include',
         body: JSON.stringify({
             password, email
         })
@@ -26,11 +27,11 @@ export const register = (password, email) => {
 export const login = (password, email) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
-        credentials: 'include',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({
             "password": password,
             "email": email
