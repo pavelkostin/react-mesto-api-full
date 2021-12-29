@@ -188,7 +188,7 @@ function App() {
   function handleAddPlaceSubmit(data) {
     newApi.postNewCard(data)
       .then(res => {
-        setCards([res, ...cards])
+        setCards([res.data, ...cards])
         closeAllPopups()
       })
       .catch((err) => console.log(err))
