@@ -10,11 +10,9 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     /* const isOwn = card.owner._id === currentUser._id; */
 
     const isOwn = card.owner === currentUser._id; //
-    console.log(card.owner);
-    console.log(currentUser._id);
 
     const delBtnClass = (
-        `cards__delete ${isOwn ? 'cards__delete' : 'cards__delete_hidden'}`
+        `${isOwn ? 'cards__delete' : 'cards__delete_hidden'}`
     );
 
     // like btn class
