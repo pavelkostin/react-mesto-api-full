@@ -22,7 +22,7 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     const isLiked = card.likes.some(like=>like === currentUser._id)
 
     const likeBtnClass = (
-        `cards__like ${isLiked ? 'cards__like_active' : ''}`
+        ` ${isLiked ? 'cards__like_active' : 'cards__like'}`
     )
 
     return (
