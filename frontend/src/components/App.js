@@ -185,10 +185,10 @@ function App() {
       .catch((err) => console.log(err))
   }
 
-  function handleAddPlaceSubmit(data) {
-    newApi.postNewCard(data)
-      .then(res => {
-        setCards([res, ...cards])
+  function handleAddPlaceSubmit(card) {
+    newApi.postNewCard(card)
+      .then(newCard => {
+        setCards([newCard, ...cards])
         closeAllPopups()
       })
       .catch((err) => console.log(err))
