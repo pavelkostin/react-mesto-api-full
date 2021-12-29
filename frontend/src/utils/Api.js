@@ -1,7 +1,7 @@
 class Api {
     constructor(options) {
         this._url = options.url;
-        /* this._headers = options.headers; */
+        this._headers = options.headers;
     }
 
     _checkResponse(res) {
@@ -96,9 +96,9 @@ class Api {
 export const newApi = new Api({
     url: "http://api.shatura.students.nomoredomains.rocks",
     credentials: 'include',
-    /*     headers: {
-            authorization: "1ee4b4ce-cc80-4da8-ae23-ade464e5dd65",
-            "Content-Type": "application/json",
-        }, */
+    headers: {
+        authorization: "1ee4b4ce-cc80-4da8-ae23-ade464e5dd65",
+        "Content-Type": "application/json",
+    },
 });
 
