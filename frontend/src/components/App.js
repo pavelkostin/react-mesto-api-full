@@ -120,8 +120,8 @@ function App() {
       })
   } */
 
-  function authorization(password, email) {
-    auth.login(password, email)
+  function authorization(email, password) {
+    auth.login(email, password)
       .then((data) => {
         if (data.token) {
           localStorage.setItem('token', data.token);
