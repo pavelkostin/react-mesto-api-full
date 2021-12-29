@@ -97,7 +97,7 @@ export const newApi = new Api({
     url: "http://api.shatura.students.nomoredomains.rocks",
     credentials: 'include',
     headers: {
-        authorization: `${localStorage.getItem('token')}`,
+        authorization: `Bearer ${localStorage.getItem('token')}`,
         "Content-Type": "application/json",
     },
 });
