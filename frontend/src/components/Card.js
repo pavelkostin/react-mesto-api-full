@@ -10,10 +10,11 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     /* const isOwn = card.owner._id === currentUser._id; */
 
     const isOwn = card.owner === currentUser._id; //
-
+    console.log(card.owner);
+    console.log(currentUser._id);
 
     const delBtnClass = (
-        ` ${isOwn ? 'cards__delete' : 'cards__delete_hidden'}`
+        `cards__delete ${isOwn ? 'cards__delete' : 'cards__delete_hidden'}`
     );
 
     // like btn class
@@ -21,7 +22,7 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
 
     const isLiked = card.likes.some(like => like === currentUser._id) //убрали like._id
 
-    console.log(isLiked);
+    /* console.log(isLiked); */
 
     const likeBtnClass = (
         `cards__like ${isLiked ? 'cards__like_active' : ''}`

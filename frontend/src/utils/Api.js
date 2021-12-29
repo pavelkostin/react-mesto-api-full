@@ -68,7 +68,8 @@ class Api {
 
         return fetch(`${this._url}/cards/${card._id}`, {
             method: "DELETE",
-            headers: this._headers
+            headers: this._headers,
+            credentials: 'include',
         })
             .then(this._checkResponse);
     }
