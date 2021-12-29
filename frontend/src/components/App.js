@@ -93,7 +93,7 @@ function App() {
   }
 
 
-/*   function authorization(password, email) {
+  function authorization(password, email) {
     auth.login(password, email)
       .then((data) => {
         if (data.token) {
@@ -118,9 +118,9 @@ function App() {
             .catch((err) => console.log(err))
         }
       })
-  } */
+  }
 
-  function authorization(email, password) {
+/*   function authorization(email, password) {
     auth.login(email, password)
       .then((data) => {
         if (data.token) {
@@ -147,7 +147,7 @@ function App() {
             .catch((err) => console.log(err))
         }
       })
-  }
+  } */
 
 
   function signOut() {
