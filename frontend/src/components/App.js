@@ -93,7 +93,7 @@ function App() {
   }
 
 
-  function authorization(password, email) {
+/*   function authorization(password, email) {
     auth.login(password, email)
       .then((data) => {
         if (data.token) {
@@ -117,6 +117,22 @@ function App() {
             })
             .catch((err) => console.log(err))
         }
+      })
+  } */
+
+
+  function authorization(password, email) {
+    auth
+      .login(password, email)
+      .then((res) => {
+        if (res) {
+          localStorage.setItem('token', res.token)
+          setLoggedIn(true)
+          history.push('/')
+        }
+      })
+      .catch((err) => {
+        console.log(err)
       })
   }
 
