@@ -54,8 +54,6 @@ class Api {
         }).then(this._checkResponse);
     }
 
-
-
     getCardInfo(card) {
         return fetch(`${this._url}/cards/${card._cardId}`, {
             method: "GET",

@@ -202,10 +202,10 @@ function App() {
         <Switch>
 
 
-          <Route path='/sign-up'>
+          <Route path='/signup'>
             <Register loggedIn={loggedIn} registration={registration} />
           </Route>
-          <Route path='/sign-in'>
+          <Route path='/signin'>
             <Login handleLogin={handleLogin} authorization={authorization} />
           </Route>
 
@@ -228,7 +228,7 @@ function App() {
             {loggedIn ? (
               <Redirect to="/" />
             ) : (
-              <Redirect to="/sign-up" />
+              <Redirect to="/signup" />
             )}
           </Route>
 
