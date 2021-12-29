@@ -150,7 +150,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(like => {
+    const isLiked = card.likes.some(function(like) {
       like._id === currentUser._id
     
 
