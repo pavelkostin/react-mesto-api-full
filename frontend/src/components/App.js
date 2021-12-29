@@ -38,7 +38,7 @@ function App() {
     Promise.all([newApi.getUSerInfoFromServer(), newApi.getCardsFromServer()])
       .then(([user, cards]) => {
         setCurrentUser(user)
-        setCards(cards.data)
+        setCards(cards)
       })
       .catch((err) => console.log(err))
   }, [loggedIn]) //поставим loggedin
