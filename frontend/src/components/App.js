@@ -120,19 +120,32 @@ function App() {
       })
   } */
 
-
   function authorization(password, email) {
-    auth
-      .login(password, email)
-      .then((res) => {
-        if (res) {
-          localStorage.setItem('token', res.token)
-          setLoggedIn(true)
-          history.push('/')
+    auth.login(password, email)
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem('token', data.token);
         }
+        console.log(data.token);
       })
-      .catch((err) => {
-        console.log(err)
+      .then(() => {
+        handleLogin()
+        history.push('/')
+        
+      })
+      .then(() => {
+        const jwt = localStorage.getItem('token')
+        if (jwt) {
+          auth.getContent(jwt)
+            .then(res => {
+              if (res) {
+                setLogin(res.email)
+                handleLogin()
+                history.push('/')
+              }
+            })
+            .catch((err) => console.log(err))
+        }
       })
   }
 
@@ -212,8 +225,6 @@ function App() {
       .catch((err) => console.log(err))
 
   }
-
-
 
   return (
 
