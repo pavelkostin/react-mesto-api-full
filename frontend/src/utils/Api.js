@@ -22,6 +22,7 @@ class Api {
 
     getUSerInfoFromServer() {
         return fetch(`${this._url}/users/me`, {
+            headers: this._headers,
             credentials: 'include',
         }).then(this._checkResponse);
     }
