@@ -149,12 +149,24 @@ function App() {
 
   }
 
-  function handleCardLike(card) {
+/*   function handleCardLike(card) {
     const isLiked = card.likes.some(like => like === currentUser._id) // убрали like._id
-    console.log(isLiked);
     newApi.changeLikeCardStatus(card, !isLiked)
       .then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+      })
+      .catch((err) => console.log(err))
+  } */
+
+  function handleCardLike(card) {
+    const isLiked = card.likes.some(like => like === currentUser._id) // убрали like._id
+    newApi.changeLikeCardStatus(card, !isLiked)
+      .then((cardWithChangedLike) => {
+        setCards(
+          cards.map((cardFromState) =>
+            cardFromState._id === card._id ? cardWithChangedLike : cardFromState
+          )
+        );
       })
       .catch((err) => console.log(err))
   }
