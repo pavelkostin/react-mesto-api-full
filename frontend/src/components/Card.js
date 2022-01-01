@@ -18,7 +18,7 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     console.log(card.likes);
 
     card.likes.forEach(like => {
-        console.log(like._id);
+        console.log(like);
     })
 
     const isLiked = card.likes.some(like => like._id === currentUser._id) //убрали like._id
