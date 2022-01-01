@@ -16,12 +16,12 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     );
 
     console.log(card.likes);
-
+    debugger
     const isLiked = card.likes.some(like => like._id === currentUser._id) //убрали like._id
     const likeBtnClass = (
         `cards__like ${isLiked ? 'cards__like_active' : ''}`
     )
-
+    debugger
     return (
         <>
             <li
