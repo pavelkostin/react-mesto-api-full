@@ -14,14 +14,7 @@ export function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     const delBtnClass = (
         `${isOwn ? 'cards__delete' : 'cards__delete_hidden'}`
     );
-
-    // like btn class
-    /* const isLiked = card.likes.some(like=>like._id === currentUser._id) */
-
-    const isLiked = card.likes.some(like => like === currentUser._id) //убрали like._id
-
-    /* console.log(isLiked); */
-
+    const isLiked = card.likes.some(like => like._id === currentUser._id) //убрали like._id
     const likeBtnClass = (
         `cards__like ${isLiked ? 'cards__like_active' : ''}`
     )
